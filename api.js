@@ -18,77 +18,7 @@ const fetche_data = (len) => {
 
 
 const GetData = (data, len) => {
-      console.log(data)
-      const card = document.getElementById("card1");
-      console.log(data[0].features)
-      card.innerHTML = '';
-
-      data.slice(0, len).forEach(element => {
-            let j = 1;
-            const ol = document.createElement("ol");
-
-            element.features.forEach(value => {
-                  const li = document.createElement('li');
-                  li.innerHTML = `${j}:  ${value}
-                  `
-                  ol.appendChild(li);
-                  //  console.log(value)
-                  j++;
-            });
-
-            console.log(ol);
-            console.log(element.image[0]);
-
-            let div = document.createElement('div');
-            div.className += "card card-compact w-96 bg-base-100 shadow-xl m-3 p-2";
-
-
-            div.innerHTML = `
-    
-    <div class="w-[70%]" >
-    <figure><img class="w-full" src="${element.image}" alt="Shoes" />
-    </figure>
-    <h2 class="card-title">Features</h2>
-    </div>`
-                  //     <div class="card-body">
-                  //           <h2 class="card-title">Features</h2>
-
-                  //         <p><ol>${ol}</ol></p>
-
-                  //     </div>
-                  //     <hr class="w-[90%] mx-auto">
-                  //     <div class="m-4 flex justify-between">
-                  //           <div>
-                  //                 <p>ChatGpt</p>
-                  //                 <p>1/2/3</p>
-                  //           </div>
-                  //           <div>
-                  //                 <button class="btn bg-sky-600 btn-link">-></button>
-                  //           </div>
-                  //     </div>
-                  // </div>
-
-
-
-
-                  ;
-            const cardbody = document.getElementById('card-body');
-            div.appendChild(ol)
-            div.innerHTML += `<hr>
-            
-            <h2 class="m-2">${element.name }</h2>
-            `
-            card.appendChild(div);
-
-
-            console.log(div);
-
-
-            // console.log(element[i])
-
-
-      });
-
+      
 
 }
 
