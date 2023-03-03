@@ -25,11 +25,12 @@ const fetche_data = (len) => {
 const GetData = (data, len) => {
       console.log(data)
       const card = document.getElementById("card1");
-      console.log(data[0].published_in)
+     // console.log(data[0].id)
       card.innerHTML = '';
 
       data.slice(0, len).forEach(element => {
             let j = 1;
+           // console.log(typeof element.id)
             const ol = document.createElement("ol");
 
             element.features.forEach(value => {
@@ -56,23 +57,7 @@ const GetData = (data, len) => {
     </figure>
     <h2 class="card-title">Features</h2>
     </div>`
-                  //     <div class="card-body">
-                  //           <h2 class="card-title">Features</h2>
-
-                  //         <p><ol>${ol}</ol></p>
-
-                  //     </div>
-                  //     <hr class="w-[90%] mx-auto">
-                  //     <div class="m-4 flex justify-between">
-                  //           <div>
-                  //                 <p>ChatGpt</p>
-                  //                 <p>1/2/3</p>
-                  //           </div>
-                  //           <div>
-                  //                 <button class="btn bg-sky-600 btn-link">-></button>
-                  //           </div>
-                  //     </div>
-                  // </div>
+          
 
 
 
@@ -89,7 +74,7 @@ const GetData = (data, len) => {
             <h2>${element.published_in}</h2>
                           </div>
                             <div>
-                                  <button class="btn bg-sky-600 btn-link">-></button>
+                                  <button class="btn bg-black " onclick="details('${element.id}')">-></button>
                              </div>
           
             `
@@ -108,6 +93,10 @@ const GetData = (data, len) => {
 
       
 
+}
+const details=(id)=>{
+
+      console.log(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
 }
 
 
