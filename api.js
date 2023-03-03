@@ -18,6 +18,14 @@ const fetche_data = (len) => {
 
 
 const GetData = (data, len) => {
+      console.log(data)
+      const card = document.getElementById("card1");
+      console.log(data[0].features)
+      card.innerHTML = '';
+
+   
+
+
       
 
 }
