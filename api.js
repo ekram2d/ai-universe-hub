@@ -20,7 +20,7 @@ const fetche_data = (len) => {
 const GetData = (data, len) => {
       console.log(data)
       const card = document.getElementById("card1");
-      console.log(data[0].features)
+      console.log(data[0].published_in)
       card.innerHTML = '';
 
       data.slice(0, len).forEach(element => {
@@ -36,17 +36,18 @@ const GetData = (data, len) => {
                   j++;
             });
 
-            console.log(ol);
-            console.log(element.image[0]);
+            //console.log(ol);
+            //console.log(element.image[0]);
 
             let div = document.createElement('div');
-            div.className += "card card-compact w-96 bg-base-100 shadow-xl m-3 p-2";
+            div.className += "card card-compact w-96 bg-base-100 shadow-xl m-3 p-4";
 
 
             div.innerHTML = `
     
     <div class="w-[70%]" >
     <figure><img class="w-full" src="${element.image}" alt="Shoes" />
+    
     </figure>
     <h2 class="card-title">Features</h2>
     </div>`
@@ -75,13 +76,22 @@ const GetData = (data, len) => {
             const cardbody = document.getElementById('card-body');
             div.appendChild(ol)
             div.innerHTML += `<hr>
-            
-            <h2 class="m-2">${element.name }</h2>
+            <div class=" flex justify-between mt-4">
+                            <div>
+                                    
+            <h2 class="mt-3 font-bold">${element.name }</h2>
+
+            <h2>${element.published_in}</h2>
+                          </div>
+                            <div>
+                                  <button class="btn bg-sky-600 btn-link">-></button>
+                             </div>
+          
             `
             card.appendChild(div);
 
 
-            console.log(div);
+           // console.log(div);
 
 
             // console.log(element[i])
@@ -95,4 +105,4 @@ const GetData = (data, len) => {
 
 }
 
-fetche_data(1);
+fetche_data(6);
