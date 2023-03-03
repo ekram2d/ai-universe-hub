@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 
 <head>
       <meta charset="UTF-8">
@@ -9,31 +9,51 @@
       <title>assignment-6</title>
 </head>
 
-<body class="w-[90%] mx-auto">
+<body class="w-[90%] mx-auto" onload="">
       <header>
             <h2 class="text-2xl m-4 text-center">Ai Universe Hub </h2>
             <div class="text-center"> <button class="btn btn-error ">Error</button> </div>
 
       </header>
-     <main>
+      <main>
+            <div>
+                  <ol type="1">
+                        <li>1</li>
+                  </ol>
+            </div>
 
-   <div class="container">
-      <div class="card">
-            <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                  <div class="card-body">
-                    <h2 class="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                      <button class="btn btn-primary">Buy Now</button>
-                    </div>
+            <div id="container p-2">
+                 
+                  <div class="card lg:grid lg:grid-cols-3 gap-2" id="card1">
+                        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                              <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+                              </figure>
+                              <div class="card-body">
+                                    <h2 class="card-title">Features</h2>
+
+                                    <ol type="1">
+                                          <li>Coffee</li>
+                                          <li>Tea</li>
+                                          <li>Milk</li>
+                                    </ol>
+
+                              </div>
+                              <hr class="w-[90%] mx-auto">
+                              <div class="m-4 flex justify-between">
+                                    <div>
+                                          <p>ChatGpt</p>
+                                          <p>1/2/3</p>
+                                    </div>
+                                    <div>
+                                          <button class="btn bg-sky-600 btn-link">-></button>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
-                </div>
-      </div>
-   </div>
- 
+            </div>
 
-     </main>
+
+      </main>
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="api.js"></script>
 </body>
