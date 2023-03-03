@@ -179,7 +179,7 @@ const showMoreDetails = (data) => {
 
       } else {
             modalabsolute.classList.remove("hidden");
-            modalabsolute.innerHTML = `${accuracy.score * 100} accuracy`;
+            modalabsolute.innerHTML = `${accuracy.score * 100}% accuracy`;
       }
       const modalHead = document.getElementById("modal-head");
 
