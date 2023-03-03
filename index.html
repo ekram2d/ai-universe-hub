@@ -12,12 +12,17 @@
 <body class="w-[90%] mx-auto" onload="">
       <header>
             <h2 class="text-2xl m-4 text-center">Ai Universe Hub </h2>
-            <div class="text-center"> <button class="btn btn-error ">Short By date</button> </div>
+            <div  class="text-center"> <button  id="shortData" class="btn btn-error ">Short By date</button> </div>
+            <p id="hide" class="hidden">-1</p>
 
       </header>
       <main>
 
-            <section class="flex m-4 hidden " id="spin">
+
+<!-- spin section -->
+
+
+            <section class="flex m-4 hidden" id="spin">
                   <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
                         role="status">
                         <span
@@ -65,15 +70,19 @@
       <!-- The button to open modal -->
 
 
-      <input type="checkbox" id="my-modal" class="modal-toggle" />
+      <input type="checkbox" id="my-modal" class="modal-toggle w-full" />
 
       <div class="modal w-full">
 
-            <div class="modal-box w-full">
-                  <section class="lg:grid lg:grid-cols-2  gap-2">
+            <div class="modal-box w-11/12 max-w-5xl">
+                  <section class="lg:grid lg:grid-cols-2  gap-2 w-full ">
 
 
-                        <div id="modal" class=" p-2 h-full">
+                        <div id="modal" class="h-full border-solid border-2 border-red-500 p-5 rounded ">
+                                 <!-- cross modal -->
+                  <div class="modal-action">
+                        <label for="my-modal" class="btn bg-red-400">X</label>
+                  </div>
                               <h1 id="modal-head" class=" font-bold">chadfas</h1>
                               <div id="modal-div" class="lg:grid lg:grid-cols-3 gap-2 m-2">
                                     
@@ -109,13 +118,11 @@
                               </div>
                         </div>
                   </section>
-
+               
 
 
             </div>
-            <div class="modal-action">
-                  <label for="my-modal" class="btn bg-red-400">X</label>
-            </div>
+           
 
       </div>
 
@@ -128,8 +135,9 @@
 
 
       <section>
-            <div class="text-center"> <button onclick="showMore()" class="btn btn-error ">Show More</button> </div>
+            <div class="text-center"> <button id="showmore" onclick="showMore()" class="btn btn-error ">Show More</button> </div>
       </section>
+
 
 
 

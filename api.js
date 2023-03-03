@@ -1,6 +1,7 @@
 const fetche_data = (len) => {
+      let track = -1;
 
-
+   
       const spin = document.getElementById("spin");
       spin.classList.remove("hidden");
       fetch("https://openapi.programming-hero.com/api/ai/tools")
@@ -8,27 +9,59 @@ const fetche_data = (len) => {
             .then(data => {
                   //console.log(data)
                   spin.classList.add("hidden");
+                  document.getElementById("shortData").addEventListener("click", function () {
+                        let hide = document.getElementById('hide').innerText;
+            
+                        document.getElementById('hide').innerText = "1";
+                       // fetche_data(len);
+                        //hide=document.getElementById('hide').innerText;
+                        if (len === 0) {
+                              const newArray = data.data.tools.slice(0,);
+
+                              newArray.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
+                              GetData(newArray,);
+                              //console.log(newArray.slice(0,));
+      
+                        } else {
+                              const newArray = data.data.tools.slice(0,len);
+
+                        newArray.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
+                        GetData(newArray,);
+                        
+      
+                        }
+                        })
+                  
 
                   if (len === 0) {
-                        GetData(data.data.tools,);
+                        const hide = document.getElementById('hide').innerText;
+                     
+                        //console.log(data.data);
+                        const newArray = data.data.tools.slice(0,);
+
+                        GetData(newArray,);
 
                   } else {
-                        GetData(data.data.tools, len);
+                        const hide = document.getElementById('hide').innerText;
+                        const newArray = data.data.tools.slice(0,len);
+                      
+                        GetData(newArray,);
+
                   }
 
-                  
-            })
+
+          
+})
+
 }
 
-
-
 const GetData = (data, len) => {
-      //console.log(data)
+    //  console.log(data)
       const card = document.getElementById("card1");
       // console.log(data[0].id)
       card.innerHTML = '';
 
-      data.slice(0, len).forEach(element => {
+      data.forEach(element => {
             let j = 1;
             // console.log(typeof element.id)
             const ol = document.createElement("ol");
@@ -42,7 +75,7 @@ const GetData = (data, len) => {
                   j++;
             });
 
-           
+
 
             let div = document.createElement('div');
             div.className += "card card-compact w-96 bg-base-100 shadow-xl m-3 p-4";
@@ -218,7 +251,9 @@ const showMoreDetails = (data) => {
 
 function showMore() {
       // console.log('yes');
-
+      const showmore =document.getElementById("showmore");
+      console.log(showmore);
+      showmore.classList.add("hidden");
 
       fetche_data(0);
 
