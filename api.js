@@ -106,7 +106,7 @@ const GetData = (data, len) => {
             div.innerHTML = `
     
     <div class="lg:w-[70%]" >
-    <figure><img class="w-full" src="${element.image}" alt="Shoes" />
+    <figure><img class="w-full rounded-lg" src="${element.image}" alt="Shoes" />
     
     </figure>
     <h2 class="card-title">Features</h2>
@@ -163,28 +163,29 @@ const details = (id) => {
 
 
 const showMoreDetails = (data) => {
-     console.log(data)
+      console.log(data)
 
       let { accuracy, description, features, image_link, input_output_examples, integrations
             , logo, pricing, tool_name, use_cases, } = data;
-const modalabsolute =document.getElementById("modal-absolute");
-modalabsolute.innerHTML="";
-          if(accuracy.score === null) {
+      const modalabsolute = document.getElementById("modal-absolute");
+      modalabsolute.innerHTML = "";
+      if (accuracy.score === null) {
 
-          modalabsolute.classList.add("hidden");
+            modalabsolute.classList.add("hidden");
 
             console.log(modalabsolute);
 
-          }else{
+      } else {
             modalabsolute.classList.remove("hidden");
-            modalabsolute.innerHTML=`${accuracy.score*100} accuracy`;
-          }
+            modalabsolute.innerHTML = `${accuracy.score * 100} accuracy`;
+      }
       const modalHead = document.getElementById("modal-head");
-    
+
       modalHead.innerHTML = `${description}`;
 
       const modalimg = document.getElementById("modal-img");
       modalimg.src = image_link[0];
+      modalimg.classList.add("rounded-lg");
 
       const FeaturesUl = document.getElementById("FeaturesUl");
       const IntegrationsUL = document.getElementById("IntegrationsUL");
@@ -289,7 +290,7 @@ modalabsolute.innerHTML="";
 function showMore() {
       // console.log('yes');
       const showmore = document.getElementById("showmore");
-      
+
       showmore.classList.add("hidden");
 
       fetche_data(0);
