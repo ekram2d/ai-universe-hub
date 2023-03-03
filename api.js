@@ -6,8 +6,13 @@ const fetche_data = (len) => {
             .then(data => {
                   //console.log(data)
 
+            if(len === 0) {
+                  GetData(data.data.tools, );
 
+            }else{
                   GetData(data.data.tools, len);
+            }
+                 
                   // data.data.tools[0].slice(0,7).forEach(element => {
                   //       console.log(element)
                   // });
@@ -102,6 +107,18 @@ const GetData = (data, len) => {
 
 
       
+
+}
+
+
+const showMore_fetche_data= () =>{
+      
+
+}
+
+function showMore(){
+    // console.log('yes');
+     fetche_data(0);
 
 }
 
