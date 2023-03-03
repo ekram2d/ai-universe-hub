@@ -163,10 +163,12 @@ const details = (id) => {
 
 
 const showMoreDetails = (data) => {
-      console.log(data)
+      //console.log(data)
 
       let { accuracy, description, features, image_link, input_output_examples, integrations
             , logo, pricing, tool_name, use_cases, } = data;
+
+
       const modalabsolute = document.getElementById("modal-absolute");
       modalabsolute.innerHTML = "";
       if (accuracy.score === null) {
@@ -206,15 +208,17 @@ const showMoreDetails = (data) => {
 
       const modaldiv = document.getElementById("modal-div");
       modaldiv.innerHTML = '';
+      modaldiv.classList.add("p-2");
       // console.log(modaldiv);
+      //console.log(pricing);
       if (pricing === null) {
 
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-1">Free of <br>Cost/<br>Basic</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-1 text-green-600">Free of <br>Cost/<br>Basic</div>`;
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg text-yellow-600">Free of <br>Cost/<br>Pro</div>`;
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 p-1  shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 p-1  shadow-lg text-red-600" >Free of <br>Cost/<br>Enterprice</div>`;
 
 
 
@@ -225,21 +229,36 @@ const showMoreDetails = (data) => {
       else {
             for (let i in pricing) {
                   if (pricing[i].price) {
-                        modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">${pricing[i].price}</div>`
+                        //console.log(i);
+                        if (i == 0) {
+                              //   console.log(1);
+                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-2 text-green-600"> <p class='text-green-400'>${pricing[i].price}<br>${pricing[i].plan} </p></div>`
+
+                        }
+                        else if (i == 1) {
+                              //   console.log(1);
+                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-2 text-yellow-600"> <p >${pricing[i].price}<br>${pricing[i].plan} </p></div>`
+
+                        } else {
+                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-2 text-red-600"> <p >${pricing[i].price}<br>${pricing[i].plan} </p></div>`
+
+                        }
+                        // modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-2">${pricing[i].price}<br>${pricing[i].plan}</div>`
+                        //modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg"></div>`
 
 
                   }
                   else {
-                        if (i === 0) {
-                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Basic</div>`;
+                        if (i == 0) {
+                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg ">Free of <br>Cost/<br>Basic</div>`;
                         }
 
-                        else if (i === 1) {
-                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
+                        else if (i == 1) {
+                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg ">Free of <br>Cost/<br>Pro</div>`;
 
                         }
                         else {
-                              modaldiv.innerHTML += `<div class="border-2 p-1  m-1 shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
+                              modaldiv.innerHTML += `<div class="border-2 p-1  m-1 shadow-lg ">Free of <br>Cost/<br>Enterprice</div>`;
                         }
                   }
             }
