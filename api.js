@@ -50,25 +50,7 @@ const GetData = (data, len) => {
     </figure>
     <h2 class="card-title">Features</h2>
     </div>`
-                  //     <div class="card-body">
-                  //           <h2 class="card-title">Features</h2>
-
-                  //         <p><ol>${ol}</ol></p>
-
-                  //     </div>
-                  //     <hr class="w-[90%] mx-auto">
-                  //     <div class="m-4 flex justify-between">
-                  //           <div>
-                  //                 <p>ChatGpt</p>
-                  //                 <p>1/2/3</p>
-                  //           </div>
-                  //           <div>
-                  //                 <button class="btn bg-sky-600 btn-link">-></button>
-                  //           </div>
-                  //     </div>
-                  // </div>
-
-
+               
 
 
                   ;
