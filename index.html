@@ -12,7 +12,7 @@
 
 <!-- short by data  ....................... -->
 
-<body class="w-[90%] mx-auto" onload="">
+<body class="w-[90%] mx-auto">
       <header>
             <h2 class="text-2xl m-4 text-center">Ai Universe Hub </h2>
             <div class="text-center"> <button id="shortData" class="btn btn-error ">Short By date</button> </div>
@@ -26,7 +26,7 @@
 
 
             <section class=" m-3 p-4 hidden" id="spin">
-                  <div class="flex">
+                  <div class="flex w-[50%] mx-auto">
 
 
                         <div class=" inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
@@ -47,10 +47,10 @@
 
 
 
-            <section>
-                  <div id="container p-2">
+            <section class="lg:w-[80%] mx-auto">
+                  <div id="container" class="lg:w-[90%]">
 
-                        <div class="card lg:grid lg:grid-cols-3 gap-2" id="card1">
+                        <div class="card lg:grid lg:grid-cols-3 gap-2 w-full" id="card1">
                               <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
                               <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
                               </figure>
@@ -87,11 +87,11 @@
       <!-- The button to open modal -->
 
 
-      <input type="checkbox" id="my-modal" class="modal-toggle " />
+      <input type="checkbox" id="my-modal" class="modal-toggle w-80%" />
 
       <div class="modal w-full">
 
-            <div class="modal-box w-auto md:w-10/12 max-w-5xl">
+            <div class="modal-box w-auto md:w-10/12 max-w-4xl">
                   <label for="my-modal" class="btn bg-red-400 m-4 text-lg font-bold">X</label>
 
                   <section class="lg:grid lg:grid-cols-2  gap-3 ">
@@ -126,8 +126,17 @@
                         </div>
                         <div class="lg:w-auto">
                               <div id="">
-
-                                    <img class="w-[70%] mx-auto" src="" id="modal-img">
+                                    <div class="static ...">
+                                          <!-- Static parent -->
+                                         
+                                          <!-- Static parent -->
+                                          <div class="absolute ... bg-red-400 rounded-lg right-24 p-3 "id="modal-absolute"></div>
+                                          <img class="w-[70%] mx-auto " src="" id="modal-img">
+                                          
+                                        </div>
+                                       
+                                       
+                                   
                                     <div id="model-img-div" class="mt-2">
 
                                     </div>

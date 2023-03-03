@@ -100,12 +100,12 @@ const GetData = (data, len) => {
 
 
             let div = document.createElement('div');
-            div.className += "card card-compact w-96 bg-base-100 shadow-xl m-3 p-4";
+            div.className += "card card-compact w-full bg-base-100 shadow-xl m-3 p-4";
 
 
             div.innerHTML = `
     
-    <div class="w-[70%]" >
+    <div class="lg:w-[70%]" >
     <figure><img class="w-full" src="${element.image}" alt="Shoes" />
     
     </figure>
@@ -123,8 +123,8 @@ const GetData = (data, len) => {
             <h2>${element.published_in}</h2>
             </div>
                           </div>
-                            <div>
-                            <label for="my-modal" class="btn" onclick="details('${element.id}')"</>open modal</label>
+                            <div class="flex">
+                            <label  for="my-modal" class="btn p-3 bg-red-400 text-white" onclick="details('${element.id}')"</>-></label>
 
                           
                              </div>
@@ -163,12 +163,24 @@ const details = (id) => {
 
 
 const showMoreDetails = (data) => {
-      console.log(data)
+     console.log(data)
 
       let { accuracy, description, features, image_link, input_output_examples, integrations
             , logo, pricing, tool_name, use_cases, } = data;
+const modalabsolute =document.getElementById("modal-absolute");
+modalabsolute.innerHTML="";
+          if(accuracy.score === null) {
+
+          modalabsolute.classList.add("hidden");
+
+            console.log(modalabsolute);
+
+          }else{
+            modalabsolute.classList.remove("hidden");
+            modalabsolute.innerHTML=`${accuracy.score*100} accuracy`;
+          }
       const modalHead = document.getElementById("modal-head");
-      console.log();
+    
       modalHead.innerHTML = `${description}`;
 
       const modalimg = document.getElementById("modal-img");
@@ -277,7 +289,7 @@ const showMoreDetails = (data) => {
 function showMore() {
       // console.log('yes');
       const showmore = document.getElementById("showmore");
-      console.log(showmore);
+      
       showmore.classList.add("hidden");
 
       fetche_data(0);
