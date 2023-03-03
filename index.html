@@ -17,7 +17,7 @@
       </header>
       <main>
 
-            <section class="flex m-4 hidden " id="spin" >
+            <section class="flex m-4 hidden " id="spin">
                   <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
                         role="status">
                         <span
@@ -55,33 +55,69 @@
                        </div> -->
                   </div>
             </div>
-        
+
 
 
 
       </main>
 
 
-<!-- The button to open modal -->
+      <!-- The button to open modal -->
 
 
-<input type="checkbox" id="my-modal" class="modal-toggle" />
-<div class="modal">
-  <div class="modal-box">
-      <section>
-    <div>
-gs
-    </div>
-    <div>
+      <input type="checkbox" id="my-modal" class="modal-toggle" />
 
-asg
-    </div>
-</section>
-    <div class="modal-action">
-      <label for="my-modal" class="btn bg-red-400">X</label>
-    </div>
-  </div>
-</div>
+      <div class="modal w-full">
+
+            <div class="modal-box w-full">
+                  <section class="lg:grid lg:grid-cols-2  gap-2">
+
+
+                        <div id="modal" class=" p-2 h-full">
+                              <h1 id="modal-head" class=" font-bold">chadfas</h1>
+                              <div id="modal-div" class="lg:grid lg:grid-cols-3 gap-2 m-2">
+                                    
+                              </div>
+
+                              <div class="lg:grid lg:grid-cols-2 gap-2">
+                                    <div class="m-2">
+                                          <h1 class="font-bold">Features</h1>
+                                          <ul id="FeaturesUl" class="list-disc">
+
+
+                                          </ul>
+                                    </div>
+                                    <div class="m-2">
+                                          <h1 class="font-bold">Integrations</h1>
+                                          <ul id="IntegrationsUL" class="list-disc">
+                                               
+
+                                          </ul>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="lg:">
+                              <div id="">
+                                    <img src="" id="modal-img">
+                                   <div id="model-img-div" class="mt-2">
+                                    
+                                   </div> 
+
+                              </div>
+                              <div>
+
+                              </div>
+                        </div>
+                  </section>
+
+
+
+            </div>
+            <div class="modal-action">
+                  <label for="my-modal" class="btn bg-red-400">X</label>
+            </div>
+
+      </div>
 
 
 
@@ -95,7 +131,7 @@ asg
             <div class="text-center"> <button onclick="showMore()" class="btn btn-error ">Show More</button> </div>
       </section>
 
-     
+
 
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="api.js"></script>
