@@ -1,10 +1,13 @@
 const fetche_data = (len) => {
 
 
+      const spin=document.getElementById("spin");
+      spin.classList.remove("hidden");
       fetch("https://openapi.programming-hero.com/api/ai/tools")
             .then(res => res.json())
             .then(data => {
                   //console.log(data)
+                  spin.classList.add("hidden");
 
             if(len === 0) {
                   GetData(data.data.tools, );
@@ -23,7 +26,7 @@ const fetche_data = (len) => {
 
 
 const GetData = (data, len) => {
-      console.log(data)
+      //console.log(data)
       const card = document.getElementById("card1");
      // console.log(data[0].id)
       card.innerHTML = '';
@@ -70,11 +73,15 @@ const GetData = (data, len) => {
                             <div>
                                     
             <h2 class="mt-3 font-bold">${element.name }</h2>
-
+      <div class="flex gap-1">
+            <img class="w-[5%]" src=${"image/month.png"}>
             <h2>${element.published_in}</h2>
+            </div>
                           </div>
                             <div>
-                                  <button class="btn bg-black " onclick="details('${element.id}')">-></button>
+                            <label for="my-modal" class="btn" onclick="details('${element.id}')"</>open modal</label>
+
+                          
                              </div>
           
             `
@@ -96,9 +103,30 @@ const GetData = (data, len) => {
 }
 const details=(id)=>{
 
-      console.log(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+      const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+
+      fetch(URL)
+      .then(res=>res.json())
+      .then(data=>{
+            showMoreDetails(data.data);
+      })
 }
 
+
+const showMoreDetails=(data)=>{
+      console.log(data)
+for(let i in data) {
+     // console.log(i)
+
+
+}
+//(20 > 15) ? "Yes" : "No";
+let {accuracy,description, features, image_link,input_output_examples,integrations
+,logo,pricing,tool_name,use_cases,} = data;
+
+console.log(description);
+
+}
 
 const showMore_fetche_data= () =>{
       
@@ -107,8 +135,10 @@ const showMore_fetche_data= () =>{
 
 function showMore(){
     // console.log('yes');
+
+    
      fetche_data(0);
 
 }
 
-fetche_data(6);
+fetche_data(1);

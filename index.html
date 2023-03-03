@@ -16,12 +16,20 @@
 
       </header>
       <main>
-          
+
+            <section class="flex m-4 hidden " id="spin" >
+                  <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
+                        role="status">
+                        <span
+                              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                  </div>
+            </section>
+
 
             <div id="container p-2">
-                 
+
                   <div class="card lg:grid lg:grid-cols-3 gap-2" id="card1">
-                        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                        <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
                               <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
                               </figure>
                               <div class="card-body">
@@ -44,16 +52,51 @@
                                           <button class="btn bg-sky-600 btn-link">-></button>
                                     </div>
                               </div>
-                        </div>
+                       </div> -->
                   </div>
             </div>
+        
+
 
 
       </main>
+
+
+<!-- The button to open modal -->
+
+
+<input type="checkbox" id="my-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box">
+      <section>
+    <div>
+gs
+    </div>
+    <div>
+
+asg
+    </div>
+</section>
+    <div class="modal-action">
+      <label for="my-modal" class="btn bg-red-400">X</label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
       <section>
             <div class="text-center"> <button onclick="showMore()" class="btn btn-error ">Show More</button> </div>
       </section>
+
      
+
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="api.js"></script>
 </body>
