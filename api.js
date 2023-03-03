@@ -1,41 +1,55 @@
+// fetch the data ..................................>
+
+
+
+
+
+
 const fetche_data = (len) => {
       let track = -1;
 
-   
+
       const spin = document.getElementById("spin");
       spin.classList.remove("hidden");
       fetch("https://openapi.programming-hero.com/api/ai/tools")
             .then(res => res.json())
             .then(data => {
-                  //console.log(data)
+
                   spin.classList.add("hidden");
+
+
+                  // short data eventLisitener added .............................>
+
+
+
+
+
                   document.getElementById("shortData").addEventListener("click", function () {
                         let hide = document.getElementById('hide').innerText;
-            
+
                         document.getElementById('hide').innerText = "1";
-                       // fetche_data(len);
-                        //hide=document.getElementById('hide').innerText;
+
                         if (len === 0) {
                               const newArray = data.data.tools.slice(0,);
 
                               newArray.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
                               GetData(newArray,);
-                              //console.log(newArray.slice(0,));
-      
-                        } else {
-                              const newArray = data.data.tools.slice(0,len);
 
-                        newArray.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
-                        GetData(newArray,);
-                        
-      
+
+                        } else {
+                              const newArray = data.data.tools.slice(0, len);
+
+                              newArray.sort((a, b) => new Date(a.published_in) - new Date(b.published_in));
+                              GetData(newArray,);
+
+
                         }
-                        })
-                  
+                  })
+
 
                   if (len === 0) {
                         const hide = document.getElementById('hide').innerText;
-                     
+
                         //console.log(data.data);
                         const newArray = data.data.tools.slice(0,);
 
@@ -43,27 +57,35 @@ const fetche_data = (len) => {
 
                   } else {
                         const hide = document.getElementById('hide').innerText;
-                        const newArray = data.data.tools.slice(0,len);
-                      
+                        const newArray = data.data.tools.slice(0, len);
+
                         GetData(newArray,);
 
                   }
 
 
-          
-})
+
+            })
 
 }
 
+
+//  get dat from api  ...............................................>
+
+
+
+
+
+
 const GetData = (data, len) => {
-    //  console.log(data)
+      //  console.log(data)
       const card = document.getElementById("card1");
       // console.log(data[0].id)
       card.innerHTML = '';
 
       data.forEach(element => {
             let j = 1;
-            // console.log(typeof element.id)
+
             const ol = document.createElement("ol");
 
             element.features.forEach(value => {
@@ -88,13 +110,7 @@ const GetData = (data, len) => {
     
     </figure>
     <h2 class="card-title">Features</h2>
-    </div>`
-
-
-
-
-
-                  ;
+    </div>` ;
             const cardbody = document.getElementById('card-body');
             div.appendChild(ol)
             div.innerHTML += `<hr>
@@ -125,6 +141,11 @@ const GetData = (data, len) => {
 
 
 }
+
+// get api by id number ......................>
+
+
+
 const details = (id) => {
 
       const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
@@ -135,6 +156,10 @@ const details = (id) => {
                   showMoreDetails(data.data);
             })
 }
+
+
+
+// modal data added>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 const showMoreDetails = (data) => {
@@ -165,19 +190,20 @@ const showMoreDetails = (data) => {
       }
       // console.log(input_output_examples[0])
 
+
       const modaldiv = document.getElementById("modal-div");
       modaldiv.innerHTML = '';
       // console.log(modaldiv);
       if (pricing === null) {
 
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Basic</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg p-1">Free of <br>Cost/<br>Basic</div>`;
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
 
-            modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
+            modaldiv.innerHTML += `<div class="border-2  m-1 p-1  shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
 
-            // <div class="border-2  m-1 shadow-lg">sga</div>
+
 
 
 
@@ -188,21 +214,19 @@ const showMoreDetails = (data) => {
                   if (pricing[i].price) {
                         modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">${pricing[i].price}</div>`
 
-                        // <div class="border-2  m-1 shadow-lg">sga</div>
 
-                        // console.log(pricing[i].price);
                   }
                   else {
                         if (i === 0) {
-                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Basic</div>`;
+                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Basic</div>`;
                         }
 
                         else if (i === 1) {
-                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
+                              modaldiv.innerHTML += `<div class="border-2  m-1 p-1 shadow-lg">Free of <br>Cost/<br>Pro</div>`;
 
                         }
                         else {
-                              modaldiv.innerHTML += `<div class="border-2  m-1 shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
+                              modaldiv.innerHTML += `<div class="border-2 p-1  m-1 shadow-lg">Free of <br>Cost/<br>Enterprice</div>`;
                         }
                   }
             }
@@ -212,8 +236,8 @@ const showMoreDetails = (data) => {
       IntegrationsUL.innerHTML = "";
       FeaturesUl.innerHTML = "";
       if (integrations === null) {
-            // IntegrationsUL.innerHTML.remove.classList("list-disc");
-            IntegrationsUL.innerHTML = `<p>No Data Found</p>`
+
+            IntegrationsUL.innerHTML = `<p class="text-center">No Data Found</p>`
 
       }
       else {
@@ -224,14 +248,14 @@ const showMoreDetails = (data) => {
                   const li = document.createElement("li");
                   li.innerHTML = `<p>${value}</p>`
                   IntegrationsUL.appendChild(li);
-                  //console.log(value);
+
 
             }
             )
       }
-      //console.log(features)
+
       if (features === null) {
-            FeaturesUl.innerHTML = `<p>No Data Found</p>`
+            FeaturesUl.innerHTML = `<p class="text-center" >No Data Found</p>`
       }
       else {
             for (let i in features) {
@@ -248,10 +272,11 @@ const showMoreDetails = (data) => {
 }
 
 
+// showMore button working ............................................>
 
 function showMore() {
       // console.log('yes');
-      const showmore =document.getElementById("showmore");
+      const showmore = document.getElementById("showmore");
       console.log(showmore);
       showmore.classList.add("hidden");
 
