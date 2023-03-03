@@ -12,21 +12,25 @@
 <body class="w-[90%] mx-auto" onload="">
       <header>
             <h2 class="text-2xl m-4 text-center">Ai Universe Hub </h2>
-            <div  class="text-center"> <button  id="shortData" class="btn btn-error ">Short By date</button> </div>
+            <div class="text-center"> <button id="shortData" class="btn btn-error ">Short By date</button> </div>
             <p id="hide" class="hidden">-1</p>
 
       </header>
       <main>
 
 
-<!-- spin section -->
+            <!-- spin section -->
 
 
-            <section class="flex m-4 hidden" id="spin">
-                  <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
-                        role="status">
-                        <span
-                              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+            <section class=" m-3 p-4 hidden" id="spin">
+                  <div class="flex">
+
+
+                        <div class=" inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-red-800 motion-reduce:animate-[spin_1.5s_linear_infinite] mx-auto"
+                              role="status">
+                              <span
+                                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                        </div>
                   </div>
             </section>
 
@@ -70,22 +74,24 @@
       <!-- The button to open modal -->
 
 
-      <input type="checkbox" id="my-modal" class="modal-toggle w-full" />
+      <input type="checkbox" id="my-modal" class="modal-toggle " />
 
       <div class="modal w-full">
 
-            <div class="modal-box w-11/12 max-w-5xl">
-                  <section class="lg:grid lg:grid-cols-2  gap-2 w-full ">
+            <div class="modal-box w-auto md:w-10/12 max-w-5xl">
+                  <label for="my-modal" class="btn bg-red-400 m-4 text-lg font-bold">X</label>
+
+                  <section class="lg:grid lg:grid-cols-2  gap-2 ">
 
 
-                        <div id="modal" class="h-full border-solid border-2 border-red-500 p-5 rounded ">
-                                 <!-- cross modal -->
-                  <div class="modal-action">
-                        <label for="my-modal" class="btn bg-red-400">X</label>
-                  </div>
+                        <div id="modal" class="h-auto border-solid border-2 border-red-500 p-5 rounded ">
+                              <!-- cross modal -->
+                              <div class="modal-action">
+
+                              </div>
                               <h1 id="modal-head" class=" font-bold">chadfas</h1>
                               <div id="modal-div" class="lg:grid lg:grid-cols-3 gap-2 m-2">
-                                    
+
                               </div>
 
                               <div class="lg:grid lg:grid-cols-2 gap-2">
@@ -99,18 +105,18 @@
                                     <div class="m-2">
                                           <h1 class="font-bold">Integrations</h1>
                                           <ul id="IntegrationsUL" class="list-disc">
-                                               
+
 
                                           </ul>
                                     </div>
                               </div>
                         </div>
-                        <div class="lg:">
+                        <div class="lg:w-auto">
                               <div id="">
                                     <img src="" id="modal-img">
-                                   <div id="model-img-div" class="mt-2">
-                                    
-                                   </div> 
+                                    <div id="model-img-div" class="mt-2">
+
+                                    </div>
 
                               </div>
                               <div>
@@ -118,11 +124,11 @@
                               </div>
                         </div>
                   </section>
-               
+
 
 
             </div>
-           
+
 
       </div>
 
@@ -135,7 +141,8 @@
 
 
       <section>
-            <div class="text-center"> <button id="showmore" onclick="showMore()" class="btn btn-error ">Show More</button> </div>
+            <div class="text-center"> <button id="showmore" onclick="showMore()" class="btn btn-error ">Show
+                        More</button> </div>
       </section>
 
 
