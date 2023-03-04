@@ -196,7 +196,7 @@ const showMoreDetails = (data) => {
 
       if (input_output_examples === null) {
             modelImgDiv.innerHTML += `<p class="text-center font-bold">Can You give any example</p>`;
-            modelImgDiv.innerHTML += `<p class="text-center">Not Not Yet! Take a break!!!</p>`;
+            modelImgDiv.innerHTML += `<p class="text-center">No! Not Yet! Take a break!!!</p>`;
       }
       else {
 
